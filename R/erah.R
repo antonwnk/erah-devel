@@ -174,10 +174,11 @@ alignComp <- function(Experiment, alParameters, blocks.size=NULL)
 		corresponding.list <- list()
 		block.list <- list()
 		#i <- 1
+		cat("\b")
 	
 		for(i in 1:(length(sequs)-1))	
 		{
-			cat("Aligning block ", i, " of ", length(sequs)-1, "... \n", sep="")
+			cat("\nAligning block ", i, " of ", length(sequs)-1, "... \n", sep="")
 			ghost.object <- Experiment
 			ghost.object@Data@FactorList <- Experiment@Data@FactorList[(sequs[i]+1):sequs[(i+1)]]
 			factors.list <- ghost.object@Data@FactorList
@@ -188,7 +189,7 @@ alignComp <- function(Experiment, alParameters, blocks.size=NULL)
 			corresponding.list <- c(corresponding.list,lapply(ghost.object@Data@FactorList, function(x) x$AlignID))		
 		}
 		
-		cat("Aligning factors across blocks... \n")
+		cat("\nAligning factors across blocks... \n")
 		full.factorlist <- align.factors(block.list, min.spectra.cor, max.time.dist, max.mz, mz.range)
 			
 		#MaxALID <- max(unlist(lapply(full.factorlist, function(x) x$AlignID)))
