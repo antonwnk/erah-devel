@@ -95,7 +95,7 @@ newExp <- function(instrumental, phenotype=NULL, info=character())
 		
 	names(factors.list) <- as.vector(instrumental.dataframe$sampleID)
 	ident.list <- as.data.frame(matrix(0,ncol=7, dimnames=list(row=0,col= c("AlignID", "tmean", "Name", "MatchFactor", "CAS", "Formula", "DB.Id"))))
-	uni.stats <- as.data.frame(matrix(0,ncol=3, dimnames=list(row=0,col= c("Id", "FoldChangue", "pvalue"))))
+	uni.stats <- as.data.frame(matrix(0,ncol=3, dimnames=list(row=0,col= c("Id", "FoldChange", "pvalue"))))
 	multi.stats <- as.data.frame(matrix(0,ncol=3, dimnames=list(row=0,col= c("Id", "CompoundsInvolved", "pvalue"))))
 
 	al.par <- list()
